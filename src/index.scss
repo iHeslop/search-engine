@@ -1,5 +1,35 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/src/assets/Montserrat-VariableFont_wght.ttf");
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+:root {
+  --c-txt: #ece7e1;
+  --c-bg: #20232a;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.6;
 }

@@ -1,6 +1,6 @@
-export const getBooksBySearchTerm = async (searchTerm, startIndex) => {
+export const getBookInfo = async (bookId) => {
   const response = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&startIndex=${startIndex}&maxResults=12`
+    `https://www.googleapis.com/books/v1/volumes/${bookId}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch books");

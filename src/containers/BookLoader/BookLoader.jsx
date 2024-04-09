@@ -1,8 +1,10 @@
 import { getBooksBySearchTerm } from "../../services/book-services";
 import { useEffect, useState } from "react";
 import BookList from "../../components/BookList/BookList";
+import styles from "./BookLoader.module.scss";
+import loading from "../../assets/Loading_2.gif";
 
-const BookLoader = ({ searchTerm }) => {
+const BookLoader = ({ searchTerm, startIndex }) => {
   const [bookData, setBookData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -12,18 +14,23 @@ const BookLoader = ({ searchTerm }) => {
       setIsLoading(true);
       setBookData(null);
       setError(null);
-      getBooksBySearchTerm(searchTerm)
+      getBooksBySearchTerm(searchTerm, startIndex)
         .then((results) => setBookData(results))
         .catch((error) => setError(error))
         .finally(() => setIsLoading(false));
     }
-  }, [searchTerm]);
+  }, [searchTerm, startIndex]);
   return (
-    <>
-      {isLoading && <p>...Loading...</p>}
-      {!isLoading && error && <p style={{ color: "red" }}>{error.message}</p>}
-      {!isLoading && bookData && <BookList bookData={bookData} />}
-    </>
+    <div className={styles.container}>
+      {isLoading && <img src={loading} className={styles.loading}></img>}
+      {!isLoading && error && <h4 className={styles.error}>{error.message}</h4>}
+      {!isLoading && bookData && (
+        <div className={styles.list}>
+          <h4>Search results for {searchTerm}:</h4>
+          <BookList bookData={bookData} />
+        </div>
+      )}
+    </div>
   );
 };
 

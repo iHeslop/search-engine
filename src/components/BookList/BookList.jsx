@@ -3,7 +3,7 @@ import styles from "./BookList.module.scss";
 
 const BookList = ({ bookData }) => {
   return (
-    <div>
+    <div className={styles.box}>
       {bookData &&
         bookData.map((book) => <BookCard key={book.id} book={book} />)}
     </div>

@@ -1,0 +1,23 @@
+.container {
+  height: 90%;
+  width: 100%;
+}
+
+.list {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  height: 60px;
+}
+
+.error {
+  color: red;
+}

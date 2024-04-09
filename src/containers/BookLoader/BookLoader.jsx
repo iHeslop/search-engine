@@ -4,7 +4,7 @@ import BookList from "../../components/BookList/BookList";
 import styles from "./BookLoader.module.scss";
 import loading from "../../assets/Loading_2.gif";
 
-const BookLoader = ({ searchTerm, startIndex }) => {
+const BookLoader = ({ searchTerm, startIndex, setCurrBook }) => {
   const [bookData, setBookData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -27,7 +27,7 @@ const BookLoader = ({ searchTerm, startIndex }) => {
       {!isLoading && bookData && (
         <div className={styles.list}>
           <h4>Search results for {searchTerm}:</h4>
-          <BookList bookData={bookData} />
+          <BookList bookData={bookData} setCurrBook={setCurrBook} />
         </div>
       )}
     </div>

@@ -1,9 +1,10 @@
 import styles from "./BookCard.module.scss";
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, setCurrBook }) => {
   const bookId = book.id;
   const openModal = () => {
     console.log(`Opened modal for: ${bookId}`);
+    setCurrBook(bookId);
   };
 
   const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
@@ -12,7 +13,6 @@ const BookCard = ({ book }) => {
       ? book.volumeInfo.title.substring(0, 60) + "..."
       : book.volumeInfo.title;
   const authors = book.volumeInfo.authors;
-  const description = book.volumeInfo.description;
   return (
     <div className={styles.card}>
       {thumbnail ? (
@@ -29,7 +29,6 @@ const BookCard = ({ book }) => {
               </span>
             ))
           : ""}
-        {/* {description ? <p className={styles.info}>{description}</p> : ""} */}
       </div>
       <p onClick={openModal} className={styles.readMore}>
         ...

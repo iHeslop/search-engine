@@ -36,7 +36,8 @@ function App() {
           />
           {!searchTerm && (
             <div className="image-container">
-              <img src={searching}></img>
+              <img className="image-container-image" src={searching}></img>
+              <h1>Search for a book...</h1>
             </div>
           )}
         </FlexBox>

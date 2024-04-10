@@ -3,7 +3,6 @@ import styles from "./BookCard.module.scss";
 const BookCard = ({ book, setCurrBook }) => {
   const bookId = book.id;
   const openModal = () => {
-    console.log(`Opened modal for: ${bookId}`);
     setCurrBook(bookId);
   };
 
@@ -23,7 +22,7 @@ const BookCard = ({ book, setCurrBook }) => {
       <div className={styles.desc}>
         <h4 className={styles.title}>{title}</h4>
         {authors
-          ? authors.map((author) => (
+          ? authors.slice(0, 2).map((author) => (
               <span key={author} className={styles.author}>
                 {author}
               </span>

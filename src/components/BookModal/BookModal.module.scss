@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   height: 80vh;
-  width: 50vw;
+  width: 60vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: white;
   border-radius: 25px;
@@ -29,10 +29,72 @@
 .close {
   position: absolute;
   height: 30px;
-  right: calc(25vw + 35px);
+  right: calc(20vw + 60px);
   opacity: 0.7;
   &:hover {
     cursor: pointer;
     opacity: 1;
   }
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2em;
+  &_info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+}
+
+.image {
+  min-width: 40%;
+  max-height: 100%;
+  height: auto;
+  border: 1px solid gray;
+  align-self: center;
+  &_missing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    border: 1px solid gray;
+  }
+}
+
+.info {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.author {
+  font-style: italic;
+}
+
+.publish {
+  width: 100%;
+  font-weight: bold;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    text-decoration: underline;
+  }
+}
+
+.title {
+  font-size: 28px;
 }

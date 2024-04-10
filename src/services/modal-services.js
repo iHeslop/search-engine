@@ -7,11 +7,15 @@ export const getBookInfo = async (bookId) => {
   }
   const data = await response.json();
   const results = data.volumeInfo;
+  console.log(results);
+  const image = results.imageLinks?.medium
+    ? results.imageLinks?.medium
+    : results.imageLinks?.thumbnail;
   return {
     title: results.title,
     authors: results.authors,
     description: results.description,
-    image: results.imageLinks.thumbnail,
+    image: image,
     publisher: results.publisher,
     publishedDate: results.publishedDate,
     link: results.canonicalVolumeLink,

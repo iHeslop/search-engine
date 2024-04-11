@@ -1,6 +1,11 @@
+@use "../../scss/partials/queries";
+
 .container {
   height: 90%;
   width: 100%;
+  @include queries.small {
+    height: 90%;
+  }
 }
 
 .list {
@@ -9,6 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include queries.small {
+    align-items: flex-start;
+    height: 100%;
+  }
 }
 
 .loading {
@@ -16,8 +25,20 @@
   top: 45%;
   left: 50%;
   height: 60px;
+  @include queries.small {
+    height: 40px;
+    top: 50%;
+    left: 45%;
+  }
 }
 
 .error {
   color: red;
+}
+
+.header {
+  font-size: 18px;
+  @include queries.small {
+    font-size: 13px;
+  }
 }

@@ -8,6 +8,7 @@ import Pagination from "./components/Pagination/Pagination";
 import FlexBox from "./containers/FlexBox/FlexBox";
 import HeaderContainer from "./containers/HeaderContainer/HeaderContainer";
 import ModalContainer from "./containers/ModalContainer/ModalContainer";
+import BooksContainer from "./containers/BooksContainer/BooksContainer";
 import BookModal from "./components/BookModal/BookModal";
 import searching from "./assets/searching.gif";
 
@@ -29,21 +30,30 @@ function App() {
             <Header />
             <BookSearch onSearch={onSearch} />
           </HeaderContainer>
-          <BookLoader
-            searchTerm={searchTerm}
-            startIndex={startIndex}
-            setCurrBook={setCurrBook}
-          />
-          {!searchTerm && (
-            <div className="image-container">
-              <img className="image-container-image" src={searching}></img>
-              <h1>Search for a book...</h1>
-            </div>
-          )}
+          <BooksContainer>
+            {searchTerm && (
+              <BookLoader
+                searchTerm={searchTerm}
+                startIndex={startIndex}
+                setCurrBook={setCurrBook}
+              />
+            )}
+            {searchTerm && (
+              <Pagination
+                startIndex={startIndex}
+                setStartIndex={setStartIndex}
+              />
+            )}
+            {!searchTerm && (
+              <div className="image-container">
+                <img className="image-container-image" src={searching}></img>
+                <h1 className="image-container-heading">
+                  Search for a book...
+                </h1>
+              </div>
+            )}
+          </BooksContainer>
         </FlexBox>
-        {searchTerm && (
-          <Pagination startIndex={startIndex} setStartIndex={setStartIndex} />
-        )}
       </MainContainer>
       {currBook && (
         <ModalContainer>

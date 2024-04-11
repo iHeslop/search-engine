@@ -7,7 +7,6 @@ export const getBookInfo = async (bookId) => {
   }
   const data = await response.json();
   const results = data.volumeInfo;
-  console.log(results);
   const image = results.imageLinks?.medium
     ? results.imageLinks?.medium
     : results.imageLinks?.thumbnail;

@@ -9,6 +9,7 @@ const BookModal = ({ currBook, setCurrBook }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [bookData, setBookData] = useState(null);
+
   useEffect(() => {
     if (currBook !== null) {
       setIsLoading(true);

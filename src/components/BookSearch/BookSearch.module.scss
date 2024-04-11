@@ -1,3 +1,5 @@
+@use "../../scss/partials/queries";
+
 .form {
   display: flex;
   flex-direction: column;
@@ -6,12 +8,18 @@
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
+  @include queries.small {
+    gap: 5px;
+  }
 }
 
 .search {
   height: 30px;
   padding: 5px;
   width: 100%;
+  @include queries.small {
+    height: 24px;
+  }
 }
 
 .button {
@@ -21,5 +29,12 @@
   font-weight: bold;
   &:hover {
     cursor: pointer;
+  }
+  @include queries.small {
+    font-size: 12px;
+    width: 35%;
+    text-align: center;
+    height: 24px;
+    padding: 0;
   }
 }

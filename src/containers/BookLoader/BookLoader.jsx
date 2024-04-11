@@ -26,7 +26,7 @@ const BookLoader = ({ searchTerm, startIndex, setCurrBook }) => {
       {!isLoading && error && <h4 className={styles.error}>{error.message}</h4>}
       {!isLoading && bookData && (
         <div className={styles.list}>
-          <h4>Search results for {searchTerm}:</h4>
+          <h4 className={styles.header}>Search results for {searchTerm}:</h4>
           <BookList bookData={bookData} setCurrBook={setCurrBook} />
         </div>
       )}

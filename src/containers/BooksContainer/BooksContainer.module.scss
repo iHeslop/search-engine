@@ -1,21 +1,16 @@
 @use "../../scss/partials/queries";
 
-.box {
+.flex {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 2%;
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  padding: 1em;
   @include queries.small {
+    height: 78%;
     justify-content: space-between;
-    padding: 0.2em;
-    gap: 5px;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
+    gap: 1%;
   }
 }

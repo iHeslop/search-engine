@@ -1,11 +1,15 @@
+@use "../../scss/partials/queries";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  position: absolute;
   bottom: 8vh;
   left: 50%;
+  @include queries.small {
+    left: 42%;
+  }
 }
 
 .button {
@@ -16,6 +20,9 @@
     cursor: pointer;
     transform: scale(1.2);
   }
+  @include queries.small {
+    font-size: 14px;
+  }
 }
 
 .number {
@@ -23,4 +30,8 @@
   font-weight: bold;
   width: 20px;
   text-align: center;
+  @include queries.small {
+    font-size: 13px;
+    width: 10px;
+  }
 }

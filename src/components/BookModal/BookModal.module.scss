@@ -1,3 +1,5 @@
+@use "../../scss/partials/queries";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -8,11 +10,18 @@
   background-color: white;
   border-radius: 25px;
   padding: 2em;
+  @include queries.small {
+    width: 85vw;
+    padding: 1em;
+  }
 }
 
 .loading {
   position: absolute;
   height: 60px;
+  @include queries.small {
+    height: 40px;
+  }
   &_container {
     height: 100%;
     width: 100%;
@@ -31,6 +40,10 @@
   height: 30px;
   right: calc(20vw + 60px);
   opacity: 0.7;
+  @include queries.small {
+    right: calc(5vw + 20px);
+    height: 22px;
+  }
   &:hover {
     cursor: pointer;
     opacity: 1;
@@ -42,25 +55,42 @@
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
   gap: 2em;
+  @include queries.small {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
+  }
   &_info {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 60%;
+    width: 55%;
     gap: 20px;
     justify-content: space-evenly;
     padding: 20px;
     overflow-y: scroll;
+    @include queries.small {
+      width: 100%;
+      padding: 0;
+      gap: 12px;
+    }
   }
 }
 
 .image {
-  min-width: 40%;
+  width: 40%;
   max-height: 100%;
   height: auto;
   border: 1px solid gray;
   align-self: center;
+  @include queries.small {
+    max-height: 30%;
+    height: 30%;
+    width: auto;
+  }
   &_missing {
     display: flex;
     align-items: center;
@@ -68,26 +98,43 @@
     text-align: center;
     width: 400px;
     border: 1px solid gray;
+    @include queries.small {
+      max-height: 30%;
+      height: 30%;
+      width: 50%;
+    }
   }
 }
 
 .info {
   font-size: 14px;
   line-height: 1.5;
+  @include queries.small {
+    font-size: 12px;
+  }
 }
 
 .author {
   font-style: italic;
+  @include queries.small {
+    font-size: 13px;
+  }
 }
 
 .publish {
   width: 100%;
   font-weight: bold;
+  @include queries.small {
+    font-size: 12px;
+  }
 }
 
 .link {
   color: black;
   text-decoration: none;
+  @include queries.small {
+    font-size: 13px;
+  }
   &:hover {
     cursor: pointer;
     opacity: 0.5;
@@ -97,4 +144,7 @@
 
 .title {
   font-size: 28px;
+  @include queries.small {
+    font-size: 20px;
+  }
 }

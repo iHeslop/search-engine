@@ -4,13 +4,13 @@ import styles from "./Pagination.module.scss";
 const Pagination = ({ startIndex, setStartIndex }) => {
   const [pageNumber, setPageNumber] = useState(1);
   const handleNextPage = () => {
-    setStartIndex(startIndex + 12);
+    setStartIndex(startIndex + 5);
     setPageNumber(pageNumber + 1);
   };
 
   const handlePrevPage = () => {
-    if (startIndex >= 10) {
-      setStartIndex(startIndex - 12);
+    if (startIndex >= 5) {
+      setStartIndex(startIndex - 5);
       setPageNumber(pageNumber - 1);
     }
   };

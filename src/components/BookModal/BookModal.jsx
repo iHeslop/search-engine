@@ -51,13 +51,11 @@ const BookModal = ({ currBook, setCurrBook }) => {
 
           <div className={styles.box_info}>
             <h1 className={styles.title}>{bookData.title}</h1>
-            {bookData.authors
-              ? bookData.authors.map((author) => (
-                  <span className={styles.author} key={author}>
-                    {author}
-                  </span>
-                ))
-              : ""}
+            {bookData.authors?.map((author) => (
+              <span className={styles.author} key={author}>
+                {author}
+              </span>
+            ))}
             <p id="bookDesc" className={styles.info}>
               {bookData.description ? (
                 parse(bookData.description)

@@ -32,13 +32,11 @@ const BookCard = ({ book, setCurrBook }) => {
       )}
       <div className={styles.desc}>
         <h4 className={styles.title}>{title}</h4>
-        {authors
-          ? authors.slice(0, 2).map((author) => (
-              <span key={author} className={styles.author}>
-                {author}
-              </span>
-            ))
-          : ""}
+        {authors?.slice(0, 2).map((author) => (
+          <span key={author} className={styles.author}>
+            {author}
+          </span>
+        ))}
         <p className={styles.info}>
           {description ? parse(description) : "No description available"}
         </p>
